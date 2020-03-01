@@ -12,5 +12,15 @@ module.exports = {
   },
   chainWebpack: config => {
     config.resolve.alias.set('styles', path.resolve('src/assets/styles'))
+  },
+  devServer: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        pathRewrite: {
+          '^/api': '/mock'
+        }
+      }
+    }
   }
 }
