@@ -9,10 +9,5 @@ export default new Vuex.Store({
   state,
   mutations,
   actions: {},
-  modules: {},
-  getters: {
-    doubleCity(state) {
-      return state.city + ' ' + state.city
-    }
-  }
+  modules: {}
 })
