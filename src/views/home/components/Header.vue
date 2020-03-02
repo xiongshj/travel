@@ -7,10 +7,12 @@
       <span class="iconfont">&#xe632;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      {{ city }}
-      <span class="iconfont arrow-icon">&#xe64a;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{ city }}
+        <span class="iconfont arrow-icon">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -26,8 +28,8 @@ export default {
 <style scoped lang="less">
 .header {
   display: flex;
-  line-height: 0.86rem;
-  color: #fff;
+  line-height: @header-height;
+  color: @white-color;
   background: @theme-color;
   .header-left {
     float: left;
@@ -46,12 +48,13 @@ export default {
     padding-left: 0.2rem;
     border-radius: 0.1rem;
     color: #ccc;
-    background: #fff;
+    background: @white-color;
   }
   .header-right {
     float: right;
     width: 1.24rem;
     text-align: center;
+    color: @white-color;
     .arrow-icon {
       margin-left: -0.04rem;
       font-size: 0.24rem;

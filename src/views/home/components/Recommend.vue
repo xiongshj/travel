@@ -59,7 +59,7 @@ export default {
       padding: 0 0.2rem;
       border-radius: 0.06rem;
       line-height: 0.44rem;
-      color: #fff;
+      color: @white-color;
       background: #ff9300;
     }
   }

@@ -35,7 +35,7 @@ export default {
 
 <style scoped lang="less">
 /deep/ .swiper-pagination-bullet-active {
-  background: #fff;
+  background: @white-color;
 }
 .wrapper {
   // 以下两种方式设置图片宽高比自适应
