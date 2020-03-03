@@ -68,6 +68,7 @@ export default {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 2;
   height: @header-height;
   font-size: 0.32rem;
   line-height: @header-height;
