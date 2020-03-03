@@ -1,18 +1,16 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerClick">
-      <img
-        class="banner-img"
-        src="//img1.qunarzz.com/sight/p0/1603/50/50309ba1d90e4e3290.water.jpg_600x330_acaaf06b.jpg"
-      />
+      <img class="banner-img" :src="bannerImg" />
       <div class="banner-info">
-        <div class="banner-title">流溪河国家森林公园</div>
+        <div class="banner-title">{{ sightName }}</div>
         <div class="banner-number">
-          <span class="iconfont banner-icon">&#xe692;</span> 8
+          <span class="iconfont banner-icon">&#xe692;</span>
+          {{ galleryImages.length }}
         </div>
       </div>
     </div>
-    <gallery v-show="showGallery" :images="images" @close="handleGalleryClose"></gallery>
+    <gallery v-show="showGallery" :images="galleryImages" @close="handleGalleryClose"></gallery>
   </div>
 </template>
 
@@ -24,13 +22,14 @@ export default {
   components: {
     Gallery
   },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    galleryImages: Array
+  },
   data() {
     return {
-      showGallery: false,
-      images: [
-        'http://img1.qunarzz.com/sight/p0/1603/50/50309ba1d90e4e3290.water.jpg_r_800x800_3e120f4a.jpg',
-        'http://img1.qunarzz.com/sight/p0/1508/7c/fed4e3fbb02d42ae058d0543ab4d2cd4.water.jpg_r_800x800_1b948913.jpg'
-      ]
+      showGallery: false
     }
   },
   methods: {
