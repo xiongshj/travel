@@ -10,17 +10,21 @@
         </div>
       </div>
     </div>
-    <gallery v-show="showGallery" :images="galleryImages" @close="handleGalleryClose"></gallery>
+    <fade-animation>
+      <gallery v-show="showGallery" :images="galleryImages" @close="handleGalleryClose"></gallery>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import Gallery from '@/components/Gallery'
+import FadeAnimation from '@/components/FadeAnimation'
 
 export default {
   name: 'DetailBanner',
   components: {
-    Gallery
+    Gallery,
+    FadeAnimation
   },
   props: {
     sightName: String,
